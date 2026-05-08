@@ -1,0 +1,36 @@
+{
+  "name": "my-marketplace",
+  "owner": {
+    "name": "Yanko Dzhemerenov",
+    "email": "iankodj@gmail.com"
+  },
+  "description": "Claude Code plugins for agentic development workflows.",
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "name": "triad",
+      "description": "Plan, build, and test agentic dev loop with subagents, context7 docs lookup, and auto-formatting.",
+      "version": "0.1.0",
+      "source": "./triad",
+      "author": {
+        "name": "Yanko Dzhemerenov",
+        "email": "iankodj@gmail.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "plan-build-test",
+        "subagents",
+        "context7",
+        "auto-format",
+        "dev-workflow",
+        "agentic"
+      ],
+      "category": "development-workflow",
+      "tags": [
+        "claude-code",
+        "agentic-development",
+        "testing"
+      ]
+    }
+  ]
+}

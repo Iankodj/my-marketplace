@@ -1,0 +1,18 @@
+{
+  "name": "triad",
+  "description": "Plan, build, and test agentic dev loop. A planner skill, dev-executor and tester subagents, context7 docs lookup, and auto-formatting on save.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Yanko Dzhemerenov",
+    "email": "iankodj@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "plan-build-test",
+    "subagents",
+    "context7",
+    "auto-format",
+    "dev-workflow",
+    "agentic"
+  ]
+}
