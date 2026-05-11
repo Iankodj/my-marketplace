@@ -100,6 +100,15 @@ if [[ -n "$payload" ]] && command -v jq >/dev/null 2>&1; then
   [[ -z "$tool_name" || "$tool_name" == "null" ]] && tool_name="?"
 fi
 
+case "$tool_name" in
+  Write|Edit|MultiEdit|create_file|replace_string_in_file|insert_edit_into_file|apply_patch|\?)
+    ;;
+  *)
+    trace "skip: non-mutating tool=$tool_name"
+    exit 0
+    ;;
+esac
+
 # Resolve the file path: stdin JSON wins, $1 is a fallback.
 file=""
 extracted_via=""

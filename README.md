@@ -2,6 +2,8 @@
 
 This folder is a Claude Code plugin marketplace. Claude Code discovers it from `.claude-plugin/marketplace.json`, which currently publishes the `triad` plugin from `./triad`.
 
+For local VS Code hook testing, workspace hooks must be placed under `.github/hooks/`. This repository includes `.github/hooks/triad-auto-format.json`, which calls the Triad formatter script in `triad/hooks/auto-format.sh`.
+
 ## Install from this local marketplace
 
 From Claude Code, add this folder as a marketplace and install `triad`:
@@ -120,7 +122,7 @@ The hook formats files on every Edit / Write, dispatching by extension:
 
 For each formatter, the hook walks up from the edited file looking for a project-local `node_modules/.bin/<tool>` binary first, and falls back to a regular `PATH` lookup. So a project devDep like `prettier` works without a global install. If neither resolution finds the binary, the hook silently no-ops. Project-local config (`.prettierrc`, `pyproject.toml`, `rustfmt.toml`) is respected — the script doesn't pass `--config` flags.
 
-The `PostToolUse` matcher in `hooks.json` covers both Claude Code (`Write|Edit|MultiEdit`) and VS Code Copilot (`create_file|replace_string_in_file|insert_edit_into_file|apply_patch`) tool names. Note that VS Code Copilot's hook implementation currently ignores the `matcher` field entirely — the script handles non-file tools defensively by skipping when no file path is present in the payload.
+The packaged `PostToolUse` matcher in `triad/hooks/hooks.json` covers both Claude Code (`Write|Edit|MultiEdit`) and VS Code Copilot (`create_file|replace_string_in_file|insert_edit_into_file|apply_patch`) tool names. For VS Code workspace testing, install the hook under `.github/hooks/` as shown by `.github/hooks/triad-auto-format.json`; files elsewhere in the repo are source assets and are not discovered as active workspace hooks. The script also enforces the same mutating-tool allowlist before formatting so read-only tools such as file reads are skipped even if their payload includes a valid file path.
 
 ## Examples
 
