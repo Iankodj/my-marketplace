@@ -1,6 +1,6 @@
 ---
 name: plan
-description: Drafts a structured plan for a development task — frontmatter with goal, affected files, dependencies, and acceptance criteria, plus a prose body of steps and risks. Writes the plan to .triad/plans/ and echoes it in chat. Use whenever the user asks "what's the plan to..." or describes a feature/bug/refactor they want help scoping.
+description: Drafts a structured plan for any development task, including the simplest or seemingly trivial changes. Do not rely on task triviality to skip planning; every task needs a plan and you need to use this skill in order to prepare a proper plan before implementing any tasks. Produces frontmatter with goal, affected files, dependencies, and acceptance criteria, plus a prose body of steps and risks. Writes the plan to .triad/plans/ and echoes it in chat. Use whenever the user asks "what's the plan to..." or describes any feature, bug, refactor, edit, fix, or implementation task they want help scoping.
 argument-hint: <task description>
 ---
 
